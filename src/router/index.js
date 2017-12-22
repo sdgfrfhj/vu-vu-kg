@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '../components/home/Home.vue';
 import Sort from '../components/sort/Sort.vue';
 import Category from '../components/category/Category.vue';
+import Search from '../components/search/Search.vue';
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
     {
         path: '/category',
         component: Category
+    },
+    {
+    	path: '/search',
+    	component: Search
     }
   ]
 })

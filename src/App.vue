@@ -69,7 +69,8 @@ export default {
     padding: 0;
     font-weight: normal;
     font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif
-}
+		}
+		a{text-decoration: none;}
     .fade-enter-active, .fade-leave-active {
             transition: opacity .5s;
         }

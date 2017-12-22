@@ -17,7 +17,7 @@ import '_swiper@3.4.2@swiper/dist/css/swiper.min.css';
                    			{path: '/home', text: '新歌'},
                    			{path: '/bang', text: '歌单'},
                    			{path: '/category', text: '排行'},
-                   			{path: '/artist', text: '歌手'},
+                   			{path: '/search', text: '搜索'},
                             {path: '/aaa', text: '专辑'}
                			 ]
 					}
@@ -26,7 +26,7 @@ import '_swiper@3.4.2@swiper/dist/css/swiper.min.css';
                		var swiper = new Swiper('.swiper-container1', {
               	 	freeMode : true,
               	 	freeModeMomentumRatio: 0.5,
-					slidesPerView: 'auto'
+					slidesPerView: 'auto',
             });
         }
 	}
