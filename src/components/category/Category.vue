@@ -1,7 +1,7 @@
 <template>
 <div id="toplist_wrap" class="mod_topic" ref="wrapper">
   <ul>
-	<li class="topic_item" v-for="music in data">
+	<li class="topic_item" v-for="music in ListData">
         <div class="topic_main">
             <a href="javascript:;" class="topic_media">
                 <img width="100" height="100" v-lazy="music.picUrl">
@@ -17,7 +17,7 @@
         </div>
     </li>
  </ul>
- <div class="listload" v-show="!data.length">
+ <div class="listload" v-show="!ListData.length">
  	<loading></loading>
  </div>
 </div>
@@ -32,16 +32,16 @@
 	export default{
 		data () {
 			return{
-				data: []
+				ListData: []
 			}
 		},
 		mounted () {
 			var _this=this;
 			axios.get(API_PROXY + 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg?g_tk=197018174&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&_=1510881860404').then(function(res){
 				setTimeout(() =>{
-				_this.data=res.data.data.topList;
+				_this.ListData=res.data.data.topList;
 				},1000)
-				console.log(_this.data);
+				console.log(_this.ListData);
 			},function(error){
 				console.log(error);
 			});
@@ -68,7 +68,7 @@
         	}
     	},
     	watch: {
-    		data(){
+    		ListData(){
     			setTimeout(() =>{
     				this.songScroll && this.songScroll.refresh()
     			},20)
